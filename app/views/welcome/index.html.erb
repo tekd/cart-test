@@ -1,0 +1,19 @@
+<h2>All Items</h2>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Description</th>
+        <th>Price</th>
+      </tr>
+      <tbody>
+  <% @products.each do |product| %>
+        <tr>
+
+          <td><%=product.name%></td>
+          <td> <%=product.price%></td>
+          <td class="last-tb-col"><%=button_to "Add to Cart", add_to_cart_path(product.id), method: "post", class: "btn btn-default" %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </thead>
